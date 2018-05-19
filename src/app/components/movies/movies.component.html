@@ -1,0 +1,37 @@
+<div class="container-fluid main-container">
+ 
+     <h2>Peliculas <small>Online</small></h2>
+
+     <div class="clearfix"></div>
+     <br>
+
+     <div class="text-right">
+          <a [routerLink]="['new']" class="btn btn-default">Agregar Película</a>
+     </div>
+ 
+     <div class="clearfix"></div>
+     <br>
+
+     <div class="row">
+          <div class="col-sm-3" *ngFor="let item of listaMovies" >
+          <div class="card">
+               <img class="card-img-top" src="assets/images/{{ item.img }}" alt="Card image cap">
+               <div class="card-body">
+               <h4 class="card-title">{{ item.titulo }}</h4>
+               <p class="card-text">{{ item.sinopsis }}</p>
+               <p class="card-text">Género: {{ (item.generos_id) != undefined && (item.generos_id) != null ? item.generos_id.nombre : '' }}</p>
+               <div class="row">
+                    <div class="col-sm-6">
+                    <button type="button" class="btn-block btn btn-danger" name="button" 
+                              (click)="eliminarPelicula( item.titulo, item._id )" >Eliminar</button>
+                    </div>
+                    <div class="col-sm-6">
+                    <a  class="btn-block btn btn-primary" [routerLink]="[item._id, 'edit']" >Editar</a>
+                    </div>
+               </div>
+               </div>
+          </div>
+          </div>
+     </div> 
+ 
+ </div>

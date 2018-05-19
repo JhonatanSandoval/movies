@@ -1,0 +1,42 @@
+
+<div class="clearfix"></div>
+<br><br>
+
+<h4 class="text-center">
+     Movies Angular Page
+</h4>
+
+<br>
+
+<div class="container">
+    <div class="login-page">
+      <div class="row justify-content-md-center">
+        <div class="col-lg-4 bg-principal content-login-barra-principal">
+        </div>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="col-lg-4 bg-secundario content-login-barra-secundario">
+        </div>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="col-lg-4 bg-light content-login">
+
+          <br>
+          <form #f="ngForm" (ngSubmit) ="signIn(f.value)" autocomplete="off">
+            <div class="form-group">
+              <label for="">Email: </label>
+              <input type="email" ngModel class="form-control" name="email" id="email" placeholder="Email" >
+            </div>
+            <div class="form-group">
+              <label for="">Password:</label>
+              <input type="password" ngModel class="form-control" name="password" id="password" placeholder="Password">
+            </div>
+            <br>
+            <div class="form-group">
+              <button type="submit" class="btn btn-success btn-block" name="button" >Ingresar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

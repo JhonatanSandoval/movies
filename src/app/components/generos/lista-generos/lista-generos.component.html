@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      Lista de Generos
+
+      <a [routerLink]="['new']" >Nuevo Genero</a>
+      
+    </div>
+    <div class="card-body">
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of listaGeneros; let i = index">
+            <th>{{ i+1 }}</th>
+            <td>{{ item.nombre }}</td>
+            <td class="text-right">
+              <button class="btn btn-danger" (click)="eliminarGenero(item._id)">Eliminar</button>
+              <a [routerLink]="[item._id,'edit']" class="btn btn-primary">Editar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
